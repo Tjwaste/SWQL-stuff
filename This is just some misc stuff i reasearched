@@ -1,0 +1,19 @@
+on all nodes displaying total transmit bps
+
+SELECT 
+[data].[Interfaces].[DisplayName] AS [DisplayName]
+,[data].[DisplayName] AS [DisplayName1]
+,[data].[Interfaces].[Traffic].[ObservationTimestamp] AS [ObservationTimestamp]
+,[data].[InstanceSiteId] AS [InstanceSiteId]
+FROM orion.nodes AS data
+WHERE
+((([data].[Interfaces].[Traffic].[OutTotalPkts]) IS NOT NULL))
+WITH NOLOCK
+
+on all nodes displaying total packets transmitted 
+
+SELECT [data].[Interfaces].[DisplayName] AS [DisplayName],[data].[DisplayName] AS [DisplayName1],[data].[Interfaces].[Traffic].[ObservationTimestamp] AS [ObservationTimestamp],[data].[InstanceSiteId] AS [InstanceSiteId]
+FROM orion.nodes AS data
+WHERE
+((([data].[Interfaces].[Traffic].[OutTotalPkts]) IS NOT NULL))
+WITH NOLOCK
