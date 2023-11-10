@@ -18,12 +18,43 @@ grabs the total transmit packets for specific weeks throughout year
 SELECT  [data].[DisplayName] AS [DisplayName]
 ,[data].[DisplayName] AS [DisplayName1]
 ,[data].[InstanceSiteId] AS [InstanceSiteId]
-,[data].[Interfaces].[Traffic].[OutTotalPkts]
-,[data].[Interfaces].[Traffic].[DateTime]
-
+,[data].Interfaces.Traffic.OutTotalPkts
+,[data].Interfaces.Traffic.DateTime
 FROM orion.nodes AS data 
 
 WHERE
-(DAY([data].[Interfaces].Traffic.DateTime) BETWEEN 1 AND 7 
-AND MONTH([data].[Interfaces].Traffic.DateTime) = 1)
+(DAY([data].Interfaces.Traffic.DateTime) BETWEEN 1 AND 7
+AND MONTH([data].Interfaces.Traffic.Datetime) = 1)
+
+OR (DAY([data].Interfaces.Traffic.DateTime) BETWEEN 1 AND 7
+AND MONTH([data].Interfaces.Traffic.DateTime) = 2)
+
+OR (DAY([data].Interfaces.Traffic.DateTime) BETWEEN 1 AND 7
+AND MONTH([data].Interfaces.Traffic.DateTime) = 3)
+
+OR (DAY([data].Interfaces.Traffic.DateTime) BETWEEN 1 AND 7
+AND MONTH([data].Interfaces.Traffic.DateTime) = 4)
+
+OR (DAY([data].Interfaces.Traffic.DateTime) BETWEEN 1 AND 7
+AND MONTH([data].Interfaces.Traffic.DateTime) = 5)
+
+OR (DAY([data].Interfaces.Traffic.DateTime) BETWEEN 1 AND 7
+AND MONTH([data].Interfaces.Traffic.DateTime) = 6)
+
+OR (DAY([data].Interfaces.Traffic.DateTime) BETWEEN 1 AND 7
+AND MONTH([data].Interfaces.Traffic.DateTime) = 7)
+
+OR (DAY([data].Interfaces.Traffic.DateTime) BETWEEN 1 AND 7
+AND MONTH([data].Interfaces.Traffic.DateTime) = 8)
+
+OR (DAY([data].Interfaces.Traffic.DateTime) BETWEEN 1 AND 7
+AND MONTH([data].Interfaces.Traffic.DateTime) = 9)
+
+OR (DAY([data].Interfaces.Traffic.DateTime) BETWEEN 1 AND 7
+AND MONTH([data].Interfaces.Traffic.DateTime) = 10)
+
+
+
+
 WITH NOLOCK
+
