@@ -1,4 +1,5 @@
-used to grab transmit discards for specific weeks in each month for specific interfaces
+used to grab transmit discards for specific weeks in each month 
+for specific interfaces
 
 SELECT 
 [data].[DisplayName] AS [DisplayName]
